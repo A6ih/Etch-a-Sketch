@@ -1,30 +1,12 @@
 const container = document.querySelector("#container");
 const resetBtn = document.querySelector("#reset-btn")
-let inputNum = 16;
+const slider = document.querySelector(".slider")
+const colorPicker = document.querySelector("#color-picker")
+let color = colorPicker.value;
+let inputNum = slider.value;
 
-function coloring(event) {
-     event.target.style.backgroundColor = "red";
-}
-
-container.addEventListener("mousedown", (event) => {
-    event.target.style.backgroundColor = "red";
-    container.addEventListener("mouseover", coloring);
-});
-
-window.addEventListener("mouseup", () => {
-    container.removeEventListener("mouseover", coloring);
-});
-
-
-function resetGrid() {
-    container.textContent = "";
-    let input = Number(prompt("Choose a number between '2 to 99' for gridsize"))
-    inputNum = input;
-}
-
-resetBtn.addEventListener ("click", function() {
-    resetGrid()
-    gridsCreation();
+colorPicker.addEventListener ("input", () => {
+    color = colorPicker.value;
 })
 
 function gridsCreation() {
@@ -38,4 +20,32 @@ function gridsCreation() {
     }
 }
 
+slider.addEventListener ("input", () => {
+    inputNum = slider.value;
+    container.innerHTML = ""
+    gridsCreation()
+})
+
+resetBtn.addEventListener ("click", function() {
+    container.innerHTML = "";
+    gridsCreation();
+})
+
+function coloring(event) {
+     event.target.style.backgroundColor = color;
+}
+
+// If mouse is held down triggers coloring function
+container.addEventListener("mousedown", (event) => {
+    event.target.style.backgroundColor = color;
+    container.addEventListener("mouseover", coloring);
+});
+
+window.addEventListener("mouseup", () => {
+    container.removeEventListener("mouseover", coloring);
+});
+
+
+
+//calls this function when the page loads
 gridsCreation()
