@@ -2,9 +2,19 @@ const container = document.querySelector("#container");
 const resetBtn = document.querySelector("#reset-btn")
 let inputNum = 16;
 
-container.addEventListener ("mouseover", (event) => {
+function coloring(event) {
      event.target.style.backgroundColor = "red";
-})
+}
+
+container.addEventListener("mousedown", (event) => {
+    event.target.style.backgroundColor = "red";
+    container.addEventListener("mouseover", coloring);
+});
+
+window.addEventListener("mouseup", () => {
+    container.removeEventListener("mouseover", coloring);
+});
+
 
 function resetGrid() {
     container.textContent = "";
