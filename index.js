@@ -2,8 +2,13 @@ const container = document.querySelector("#container");
 const resetBtn = document.querySelector("#reset-btn")
 const slider = document.querySelector(".slider")
 const colorPicker = document.querySelector("#color-picker")
+const eraser = document.querySelector("#eraser")
 let color = colorPicker.value;
 let inputNum = slider.value;
+
+eraser.addEventListener ("click", () => {
+    color = "white"
+})
 
 colorPicker.addEventListener ("input", () => {
     color = colorPicker.value;

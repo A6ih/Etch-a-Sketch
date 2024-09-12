@@ -4,7 +4,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 1.5em;
     padding: 10px;
     background-color: whitesmoke;
 }
@@ -20,6 +20,7 @@ body {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
+    text-align: center;
 }
 
 
@@ -87,5 +88,12 @@ body {
   }
 
   label {
+    font-size: 18px;
+  }
+
+  #eraser {
+    background-color: white;
+    color: black;
+    padding: 18px 38px;
     font-size: 18px;
   }
