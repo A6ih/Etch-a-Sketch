@@ -35,7 +35,7 @@ body {
 }
 
 .grids {
-    outline: 1px solid black;
+    outline: none;
     background-color: white;
     flex:1 1 auto;
     aspect-ratio: 1 / 1;
