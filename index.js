@@ -4,7 +4,7 @@ const slider = document.querySelector(".slider")
 const colorPicker = document.querySelector("#color-picker")
 const eraser = document.querySelector("#eraser")
 let color = colorPicker.value;
-let inputNum = slider.value;
+let inputNum = Math.abs(slider.value);
 
 eraser.addEventListener ("click", () => {
     color = "white"
@@ -26,7 +26,7 @@ function gridsCreation() {
 }
 
 slider.addEventListener ("input", () => {
-    inputNum = slider.value;
+    inputNum = Math.abs(slider.value);
     container.innerHTML = ""
     gridsCreation()
 })
